@@ -1,0 +1,119 @@
+
+#h_3{
+  font-size: 38px;
+  margin-top: -10%;
+  font-weight: 400;
+  text-align: center;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 5%;
+
+}
+a{
+    background: transparent;
+}
+#p_{
+  font-size: 28px;
+  background: transparent;
+}
+#p_1{
+     width: 80%;
+     font-size: 18px;
+     background: transparent;
+    margin-left: 5%;
+    margin-top: 5%;
+     font-weight: 500;
+      height: 46%;
+      overflow: scroll;
+     word-spacing: 2px;
+     letter-spacing: .5px;
+    line-height: 20px;
+}
+#leftbottom{
+  width: 70%;
+  font-size: 22px;
+  margin-left: 10%;
+  display: flex;
+  background: transparent;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+#img_{
+     width: 70%;
+     height: 100%;
+    margin-top: 30%;
+     background: white;
+     box-shadow: 0 21px 42px -10px rgba(0,0,0,);
+    }
+#maindiv{
+        width: 75%;
+        transition: all .2s;
+ }
+@media (max-width: 1290px) {
+    #p_1{
+        font-size: 16px;
+     font-weight: 400;
+     height: 50%;
+     overflow-y: scroll;
+    }
+    #leftbottom{
+    width: 70%;
+
+    font-size: 18px;
+    }
+    #img_{
+        width: 80%;
+    }
+    #maindiv{
+        width: 95%;
+    }
+}
+@media (max-width: 1010px) {
+    #img_{
+        width: 80%;
+        /* border: 1px solid black; */
+    }
+}
+
+@media (max-width: 880px) {
+    #img_{
+        width: 80%;
+        /* border: 1px solid black; */
+    }
+    #h_3{
+    font-size: 28px;
+    margin-top: -10%;
+    font-weight: 400;
+    text-align: center;
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10%;
+
+    }
+    #p_{
+    font-size: 22px;
+     margin-bottom: 5%;
+    background: transparent;
+    }
+    #img_{
+        width: 80%;
+        margin-top: 0%;
+        height: 80%;
+        /* border: 1px solid black; */
+    }
+    #p_1{
+        font-size: 16px;
+     font-weight: 400;
+     height: 50%;
+     margin-bottom: 8%;
+     overflow-y: scroll;
+    }
+}
+
+@media (max-width: 550px){
+#maindiv{
+        width: 95%;
+        transition: all .2s;
+ }
+}
