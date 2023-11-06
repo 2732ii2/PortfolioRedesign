@@ -130,7 +130,7 @@ var li_2 = [
                         consistently learn the skills that help you grow as
                         well.
                       </p>
-                      <a href="https://drive.google.com/file/d/1uziqeZ_4iufKmirIdV_x4g25oAFN1y-e/view">
+                      <a href="https://drive.google.com/file/d/1uziqeZ_4iufKmirIdV_x4g25oAFN1y-e/view" target='_blank'>
                         <motion.button
                           whileTap={{ scale: 1.2, rotate: "2.45deg" }}
                           style={{
@@ -190,17 +190,7 @@ var li_2 = [
             )}
             {state == 1 && (
               <motion.div
-                style={{
-                  width: "100%",
-                  height: "130%",
-                  marginTop: "20%",
-                  position: "absolute",
-                  overflow: "scroll",
-                  background: "transparent",
-                  // background: "blue",
-                  // border:"1px solid black",
-                  borderRadius: "20px",
-                }}
+                id='upperedu'
                 initial={{
                   translateY: "-400px",
                   rotateX: "135deg",
