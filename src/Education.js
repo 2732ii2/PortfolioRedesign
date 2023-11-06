@@ -1,6 +1,7 @@
 import { MotionConfig, animate, inView, useInView, useMotionValue, useTransform } from 'framer-motion';
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
+import SouthIcon from "@mui/icons-material/South";
 import {motion} from "framer-motion";
 import "./Home.css";
 var Educ = styled.div`
@@ -19,7 +20,9 @@ var Edtop = styled.div`
   width: 100%;
   min-height:150px;
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
+  // // padding-left:20px;
+  // padding-right:20px;
   align-items:center;
   overflow: hidden;
   // border:1px solid black;
@@ -109,6 +112,10 @@ var Dot = styled.div`
 export default function Education() {
   var ref = useRef(null);
   var view=useInView(ref);
+  const handleClick = (e) => {
+    // e.target.style.border="1px solid black";
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
   var list_3 = [
     { name: "React-JS", percentage: 75 },
     { name: "Javascript", percentage: 85 },
@@ -173,18 +180,34 @@ export default function Education() {
       // perc:"73.6"
     },
   ];
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
+  // const count = useMotionValue(0);
+  // const rounded = useTransform(count, (latest) => Math.round(latest));
   useEffect(() => {
-    const controls = animate(count, 100);
-    return controls.stop;
+    // const controls = animate(count, 100);
+    // return controls.stop;
      console.log("viewed or not => ",view);
   }, [view]);
   return (
     <MotionConfig styles={{ background: "transparent" }}>
       <Educ>
         <Edtop>
+          <div></div>
           <H_3>Education</H_3>
+          <motion.div
+            onClick={handleClick}
+            whileHover={{
+              boxShadow:"0 0 6px rgba(255,255,255,0.5)",
+              borderRadius:"50%",
+              display:"flex",
+              border:"1px solid white",
+              justifyContent:'center',
+              alignItems:"center"
+            }}
+            style={{ width: "30px", height: "30px",marginRight:"10px",textAlign:"center",cursor:"pointer", background: "transparent" }}
+          >
+            {" "}
+            <SouthIcon style={{ background: "transparent",color:"red" }} />{" "}
+          </motion.div>
         </Edtop>
         <div
           style={{
@@ -362,12 +385,28 @@ export default function Education() {
         >
           <motion.div ref={ref} id="INsideLast">
             {view && (
-              <motion.div style={{width:"100%",height:"100%",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}
+              <motion.div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                }}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 1 }}
               >
-                <h1 style={{ background: "transparent",width:"90%",textAlign:"center" ,marginTop:"10px",marginBottom:"20px"}}>
+                <h1
+                  style={{
+                    background: "transparent",
+                    width: "90%",
+                    textAlign: "center",
+                    marginTop: "10px",
+                    marginBottom: "20px",
+                  }}
+                >
                   Coding <span>Skills</span>
                 </h1>
                 <div
@@ -376,65 +415,66 @@ export default function Education() {
                     height: "95%",
                     minHeight: "100%",
                     // border: "1px solid red",
-                    display:"flex",flexWrap:"wrap",alignItems:"center",
-                    justifyContent:"center",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
-                 { list_3.map((e,i)=>{
-                  return (
-                    <div
-                      style={{
-                        width: "180px",
-                        height: "180px",
-                        // border: "1px solid black",
-                        color: "black",
-                        display: "flex",
-                        marginLeft: "15px",
-                        marginRight: "15px",
-                        marginBottom: "20px",
-                        flexDirection: "column",
-                        justifyContent: "space-evenly",
-                        alignItems: "center",
-                      }}
-                    >
-                      <motion.div
-                        whileHover={{
-                          boxShadow: " 0px 0px 10px rgba(255,0,0,0.5)",
-                          cursor: "pointer",
-                          translateY: "-5px",
-                        }}
-                        animate={{
-                          duration: 1,
-                        }}
+                  {list_3.map((e, i) => {
+                    return (
+                      <div
                         style={{
-                          width: "100px",
-                          minHeight: "100px",
-                          // border: "3px solid white",
-                          background: "rgba(255,255,255,0.3)",
-                          border: "3px solid rgba(255,0,0,0.2)",
-                          borderRadius: "50%",
+                          width: "180px",
+                          height: "180px",
+                          // border: "1px solid black",
+                          color: "black",
                           display: "flex",
-                          justifyContent: "center",
-                          fontWeight: 550,
+                          marginLeft: "15px",
+                          marginRight: "15px",
+                          marginBottom: "20px",
+                          flexDirection: "column",
+                          justifyContent: "space-evenly",
                           alignItems: "center",
                         }}
                       >
-                        {e.percentage}%
-                      </motion.div>
-                      <h2
-                        style={{
-                          height: "20px",
-                          fontSize: "18px",
-                          fontWeight: 450,
-                          textAlign: "center",
-                        }}
-                      >
-                        {e.name}
-                      </h2>
-                    </div>
-                  );
-                 })  
-                  }
+                        <motion.div
+                          whileHover={{
+                            boxShadow: " 0px 0px 10px rgba(255,0,0,0.5)",
+                            cursor: "pointer",
+                            translateY: "-5px",
+                          }}
+                          animate={{
+                            duration: 1,
+                          }}
+                          style={{
+                            width: "100px",
+                            minHeight: "100px",
+                            // border: "3px solid white",
+                            background: "rgba(255,255,255,0.3)",
+                            border: "3px solid rgba(255,0,0,0.2)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            justifyContent: "center",
+                            fontWeight: 550,
+                            alignItems: "center",
+                          }}
+                        >
+                          {e.percentage}%
+                        </motion.div>
+                        <h2
+                          style={{
+                            height: "20px",
+                            fontSize: "18px",
+                            fontWeight: 450,
+                            textAlign: "center",
+                          }}
+                        >
+                          {e.name}
+                        </h2>
+                      </div>
+                    );
+                  })}
                 </div>
               </motion.div>
             )}

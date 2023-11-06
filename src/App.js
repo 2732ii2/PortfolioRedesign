@@ -25,6 +25,7 @@ function App() {
 // e-mailemail@example.com
 // Phone+0123 123 456 789
 // FreelanceAvailable
+var downloadLink="https://drive.google.com/file/d/1uziqeZ_4iufKmirIdV_x4g25oAFN1y-e/view"
 var li_2 = [
   { name: "Age",value:21 },
   { name: "Residence",value:"India" },
@@ -130,7 +131,7 @@ var li_2 = [
                         consistently learn the skills that help you grow as
                         well.
                       </p>
-                      <a href="https://drive.google.com/file/d/1uziqeZ_4iufKmirIdV_x4g25oAFN1y-e/view" target='_blank'>
+                      <a href={`${downloadLink}`} target="_blank">
                         <motion.button
                           whileTap={{ scale: 1.2, rotate: "2.45deg" }}
                           style={{
@@ -141,7 +142,9 @@ var li_2 = [
                             background: "white",
                             color: "black",
                             borderRadius: "4px",
+                            cursor: "pointer",
                           }}
+                          transition={{ duration: 0.2 }}
                         >
                           Download
                         </motion.button>
@@ -190,7 +193,7 @@ var li_2 = [
             )}
             {state == 1 && (
               <motion.div
-                id='upperedu'
+                id="upperedu"
                 initial={{
                   translateY: "-400px",
                   rotateX: "135deg",
